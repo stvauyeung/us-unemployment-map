@@ -6,6 +6,15 @@ shinyUI(fluidPage(
     ),
     fluidRow(
         column(2),
+        column(8, tags$div(
+            tags$p(
+                "This is a geographic visualization of US unemployment data from 1999-2015.  Interact with the map by using the input widgets below.  Dragging the slider changes the year, and the 'Age Group' or 'Race' menus let you segment by those features."
+            )
+        )),
+        column(2)
+    ),
+    fluidRow(
+        column(2),
         column(8, htmlOutput("map")),
         column(2)
     ),
@@ -32,6 +41,20 @@ shinyUI(fluidPage(
                                 "Hispanic", "White")
                               )
         ),
+        column(2)
+    ),
+    fluidRow(
+        column(2),
+        column(8, tags$div(
+            tags$a(
+                href = "http://twitter.com/stvauyeung", "by: @stvauyeung"
+            ),
+            tags$br(),
+            tags$a(
+                href = "https://github.com/stvauyeung/us-unemployment-map", "source code"
+            ),
+            tags$br()
+        )),
         column(2)
     )
 ))
